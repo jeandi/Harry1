@@ -15,7 +15,7 @@ namespace Portable
         public listviewxaml()
         {
             myclass forpics = new myclass();
-            forpics.createContainer().Wait();
+            forpics.createContainer();
 
             InitializeComponent();
             //var colors = new List<object>();
@@ -26,7 +26,7 @@ namespace Portable
             //};
 
             var pics = new List<object>();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 var webImage = new Image { Aspect = Aspect.AspectFit };
                 webImage.Source = ImageSource.FromUri(new Uri(forpics.urls[i]));
@@ -35,6 +35,7 @@ namespace Portable
 
             //listView.ItemsSource = colors;
             listView.ItemsSource = pics;
+            
 
             var drawerContent = new StackLayout();
             drawerContent.Children.Add(new Button { Text = "About" });

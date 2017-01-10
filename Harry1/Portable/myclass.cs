@@ -13,7 +13,7 @@ namespace Portable
         {
         }
 
-        public async Task createContainer()
+        public void createContainer()
         {
             //BlobContinuationToken continuationToken = null;
 
@@ -27,7 +27,7 @@ namespace Portable
             CloudBlobContainer container = blobClient.GetContainerReference("telugu-comedyandpunch");
 
             // Create the container if it doesn't already exist.
-            await container.CreateIfNotExistsAsync();
+            //await container.CreateIfNotExistsAsync();
 
             container.ListBlobsSegmentedAsync(new BlobContinuationToken()).Wait();
             BlobResultSegment blobResultSegment = container.ListBlobsSegmentedAsync(new BlobContinuationToken()).Result;
